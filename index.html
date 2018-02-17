@@ -4,13 +4,41 @@
   <head>
     <meta charset="utf-8">
 	<title>Guidance chatbot by IBM's Watson</title>
+	<style>
+		body 
+		{ 
+			color: #000000; font-weight: bold; font-size: 18px; background: #968CB4; //  background color(150,140,180);
+			background-image: url("emoji-cool.jpg"); background-repeat: no-repeat; 
+		}		
+		#main 
+		{ 
+			position: fixed; top: 20%; right: 150px; width: 500px; 
+			border: 0px solid #421; padding: 40px; 
+		}
+		span 
+		{ 
+			color: #711; 
+		}	
+		#main div 
+		{ 
+			margin: 10px; 
+		} 
+		#input 
+		{	
+			border: 0; background: #FFFFFF; padding: 5px; border: 1px solid #421; 
+		}
+		input[type=text] 
+		{
+			width: 230px;
+		}
+</style>
   </head>
   
   <body>
 	<div id="main">
 		<div>user: <span id="user"></span></div>
 		<div>chatbot: <span id="chatbot"></span></div>
-		<div><input id="input" type="text" placeholder="say anything..." autocomplete="off"/></div>
+		<div><input id="input" type="text" placeholder="Hello, I'm Watson and I'm here to help" autocomplete="off"/></div>
 	</div>
 
     <script type="text/javascript">
