@@ -3,10 +3,13 @@
     <button routerLink="">X</button>
   </div>
   <ul>
-    <li class="WatsonChat">Hello I'm a chat bot powered by IBM Watson, How can I help you?</li>
+    <li class="1">Hello I'm a chat bot powered by IBM Watson, How can I help you?</li>
+   <li *ngFor="let message of messages" [ngClass]="message.messageSender">{{message}}</li>
   </ul>
   <div id=messageBar>
-    <textarea placeholder="Type something"></textarea>
-    <button>send</button>
+    <input type="text" id="messageArea" #userMessage
+      (keyup.enter)="messageSend(userMessage.value)"
+      ng-model="string">
+    <button (click)="messageSend(userMessage.value)">send</button>
   </div>
 </div>
