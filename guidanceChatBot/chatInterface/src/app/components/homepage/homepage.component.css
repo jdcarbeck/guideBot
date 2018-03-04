@@ -2,12 +2,13 @@
   min-height:400px;
   min-width:400px;
   display:block;
-  padding-right:10px;
-  padding-left:10px;
 }
+
 #header{
   text-align:center;
-  width:100%;
+  height:100%;
+  background: #61707D; 
+  color:white;
 }
 
 #centeringDiv{
@@ -20,6 +21,18 @@
   margin-right:auto;
 }
 
+p{
+  padding-left:20px;
+  padding-right:20px;
+}
+
+button {
+  color:white;
+  border-style:none;
+  border-radius:12px;
+  background:#40F99B;
+  padding:10px;
+}
 
 #footer{
   text-align:left;
