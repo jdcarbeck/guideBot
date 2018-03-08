@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ChatpageComponent } from './chatpage/chatpage.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    ChatpageComponent
+    ChatpageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
