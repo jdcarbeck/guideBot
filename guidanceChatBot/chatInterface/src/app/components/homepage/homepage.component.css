@@ -1,0 +1,71 @@
+.wrapper{
+  min-height:400px;
+  min-width:400px;
+  display:block;
+}
+
+#header{
+  text-align:center;
+  height:100%;
+  background: #61707D; 
+  color:white;
+}
+
+#centeringDiv{
+  padding-top:30vh;
+  padding-bottom:30vh;
+}
+
+#mainContainer{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+p{
+  padding-left:20px;
+  padding-right:20px;
+}
+
+button {
+  color:white;
+  border-style:none;
+  border-radius:12px;
+  background:#40F99B;
+  padding:10px;
+}
+
+#footer{
+  text-align:left;
+  width:100%;
+  padding-bottom:10px;
+}
+
+#footerListContainer {
+  width:400px;
+  margin:auto;
+}
+
+.footerList {
+  display:inline-block; 
+  padding-left:10px;
+  padding-right:10px;
+  vertical-align:top;
+}
+
+.footerListTitle {
+}
+
+ul {
+  list-style:none;
+  margin:0px;
+  padding:0px;
+}
+
+li{
+  font-size:14px;
+}
+
+#projectList{
+  margin-left:21px;
+  margin-right:54px;
+}
