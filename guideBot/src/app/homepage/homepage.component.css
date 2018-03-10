@@ -1,0 +1,11 @@
+#mainContainer {
+  padding: 0px;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #36d1dc, #5b86e5);
+}
+h1 {
+  text-align:center;
+}
+#contentContainer {
+  color:white;
+}
