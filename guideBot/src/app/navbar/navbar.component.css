@@ -3,3 +3,12 @@
   border-bottom: 0px solid #ddd; 
   background: white;
 }
+
+nav {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+span {
+  font-size:.8em;
+}

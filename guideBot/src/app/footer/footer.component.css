@@ -1,25 +1,10 @@
-.page-footer
-{
-  position:absolute;
-  bottom: 0;
-  width: 100%;
-  
-  line-height: 25px;
-  padding: 10px 15px;
-  background-color: #212121;
-  border-top: 0px solid #ddd;
-  text-decoration: none;
-  text-transform: capitalize;
-  color: white;
-  
+footer {
+  color: #2c4272;
+  margin-top:0px;
 }
-.list-group
-{
-  padding: 5px 0px;
-  line-height: 8px;
-}
-#footerCR
-{
-  position: absolute;
-  bottom: 0;
+
+@media screen and (max-width:  575px), screen and (max-height: 535px) {
+  li {
+    display:none;
+  }
 }

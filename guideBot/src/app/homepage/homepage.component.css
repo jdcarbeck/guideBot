@@ -1,11 +1,30 @@
 #mainContainer {
   padding: 0px;
-  height: 100vh;
+  height:100vh;
   background-image: linear-gradient(to bottom, #36d1dc, #5b86e5);
 }
+
 h1 {
   text-align:center;
 }
+
+button {
+  outline:none;
+}
+
+#tagLine {
+  display:none;
+}
+
 #contentContainer {
   color:white;
+}
+
+@media screen and (max-width:  575px), screen and (max-height: 430px) {
+  #appDescription {
+    display:none;
+  }
+  #tagLine {
+    display:inline;  
+  }
 }
