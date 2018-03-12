@@ -1,23 +1,25 @@
 <div class="container-fluid" class="wrapper">
   <div class="row fixed-top" id="navbarContainer">
-    <div class="col"><app-navbar></app-navbar></div>
+    <div class="col px-0"><app-navbar></app-navbar></div>
   </div>
   <div class="row" id="chatlogContainer">
     <div class="col-lg-8 mx-auto" id="chatlog">
       <ul>
         <li *ngFor="let message of messageLog" [ngClass]="message.sender">{{message.sender}}, {{message.content}}</li>
       </ul>
-    </div>
+   </div>
   </div>
   <div class="row fixed-bottom" id="messageContainer">
     <div class="col-lg-8 mx-auto" id="message">
-      <div class="container" id="messageBar">
-        <input type="text" #userMessage
-          (keyup.enter)="messageSend(userMessage.value); userMessage.value =''"
-          (blur)="messageSend(userMessage.value); userMessage.value =''"
-          ng-model="string">
-        <button class="btn btn-primary"(click)="messageSend(userMessage.value)">send</button>
-      </div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Message here..." #userMessage
+            (keyup.enter)="messageSend(userMessage.value); userMessage.value =''"
+            (blur)="messageSend(userMessage.value); userMessage.value =''"
+            ng-model="string">
+            <span class="input-group=btn">
+              <button class="btn btn-secondary"(click)="messageSend(userMessage.value)">send</button>
+            </span>
+          </div>
     </div>
   </div>
 </div>

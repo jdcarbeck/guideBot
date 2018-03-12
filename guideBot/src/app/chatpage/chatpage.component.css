@@ -1,23 +1,46 @@
 #wrapper{
   padding:0px;
 }
+
 #navbarContainer {
+  margin:0px;
+  padding:0px;
 }
+
 #chatlogContainer {
   min-height:100vh;
+  margin:0px;
   background-image: linear-gradient(to bottom, #36d1dc, #5b86e5);
 }
 #chatlog {
   background-color:white;
   padding-bottom: 50px;
+  border-radius:10px;
   padding-top: 51px;
 }
-#messageContainer {
-}
+
 #message {
   padding:0px;
 }
 
 #messageBar {
   background:#dbdbdb;
+  padding:0px;
+}
+#messageContainer {
+  margin:0px;
+}
+
+
+input[type="text"], textarea {
+  outline:none;
+  box-shadow:none !important;
+  border:1px solid #ccc !important;
+}
+
+button {
+  outline:none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow:none !important;
 }
