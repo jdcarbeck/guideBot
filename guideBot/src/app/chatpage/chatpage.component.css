@@ -1,8 +1,11 @@
+#wrapper{
+  padding:0px;
+}
 #navbarContainer {
 }
 #chatlogContainer {
   min-height:100vh;
-  background-color:#e1e4ea;
+  background-image: linear-gradient(to bottom, #36d1dc, #5b86e5);
 }
 #chatlog {
   background-color:white;
@@ -10,4 +13,11 @@
   padding-top: 51px;
 }
 #messageContainer {
+}
+#message {
+  padding:0px;
+}
+
+#messageBar {
+  background:#dbdbdb;
 }
