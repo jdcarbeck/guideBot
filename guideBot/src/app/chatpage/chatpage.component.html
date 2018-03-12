@@ -1,15 +1,21 @@
-<div id="chatWrapper">
-  <div id="header">
-    <button routerLink="">X</button>
+<div class="container-fluid">
+  <div class="row fixed-top" id="navbarContainer">
+    <div class="col"><app-navbar></app-navbar></div>
   </div>
-  <ul>
-    <li *ngFor="let message of messageLog" [ngClass]="message.sender">{{message.sender}}, {{message.content}}</li>
-  </ul>
-  <div id=messageBar>
-    <input type="text" id="messageArea" #userMessage
-      (keyup.enter)="messageSend(userMessage.value); userMessage.value =''"
-      (blur)="messageSend(userMessage.value); userMessage.value =''"
-      ng-model="string">
-    <button (click)="messageSend(userMessage.value)">send</button>
+  <div class="row" id="chatlogContainer">
+    <div class="col-lg-8 mx-auto" id="chatlog">
+      <ul>
+        <li *ngFor="let message of messageLog" [ngClass]="message.sender">{{message.sender}}, {{message.content}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row fixed-bottom" id="messageContainer">
+    <div class="col-lg-8 mx-auto" id="message">
+      <input type="text" #userMessage
+        (keyup.enter)="messageSend(userMessage.value); userMessage.value =''"
+        (blur)="messageSend(userMessage.value); userMessage.value =''"
+        ng-model="string">
+      <button class="btn btn-primary"(click)="messageSend(userMessage.value)">send</button>
+    </div>
   </div>
 </div>

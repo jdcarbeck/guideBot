@@ -25,6 +25,7 @@ export class ChatpageComponent implements OnInit {
       newMessage.sender = 'user';
       newMessage.content = userMessage;
       this.messageLog.push(newMessage);    
+      window.scrollTo(0, document.body.scrollHeight);
       //send message to server here!
     }
   }
