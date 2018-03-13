@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-chatpage',
   templateUrl: './chatpage.component.html',
