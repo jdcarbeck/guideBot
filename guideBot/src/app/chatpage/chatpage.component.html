@@ -4,13 +4,15 @@
   </div>
   <div class="row" id="chatlogContainer">
     <div class="col-lg-8 mx-auto" id="chatlog">
-      <ul>
-        <li *ngFor="let message of messageLog" [ngClass]="message.sender">{{message.sender}}, {{message.content}}</li>
-      </ul>
+       <div *ngFor="let message of messageLog" class="my-2" [ngClass]="message.sender">
+          {{message.content}}
+        </div>
    </div>
   </div>
   <div class="row fixed-bottom" id="messageContainer">
-    <div class="col-lg-8 mx-auto" id="message">
+    <div class="col-lg-8 mx-auto">
+      <div class="row" id="messageBar">
+        <div class="col-10 mx-auto" id="message">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Message here..." #userMessage
             (keyup.enter)="messageSend(userMessage.value); userMessage.value =''"
@@ -20,6 +22,8 @@
               <button class="btn btn-secondary"(click)="messageSend(userMessage.value)">send</button>
             </span>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
