@@ -10,5 +10,16 @@ server.listen(3000);
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
-  console.log('A user has connected!');
+  console.log('A user connected');
+  socket.emit('message', 'Hello, I am guideBot! Ask me anything.');
+  
+  socket.on('disconnect', function() {
+    console.log('A user disconnected');
+  });
+
+  socket.on('message', function(data) {
+    console.log(data);
+    socket.emit('message', data);
+  });
+
 });

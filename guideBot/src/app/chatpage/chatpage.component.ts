@@ -1,4 +1,6 @@
 import { Component, AfterViewChecked, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-chatpage',
@@ -8,14 +10,20 @@ import { Component, AfterViewChecked, OnInit } from '@angular/core';
 export class ChatpageComponent implements OnInit, AfterViewChecked {
 
   messageLog = [];
+  private socket;
+  message;
+  connection; 
 
   constructor() { }
 
   ngOnInit() {
-    let defaultMessage = {} as Message;
-    defaultMessage.sender = 'bot';
-    defaultMessage.content = 'Hello I am a chat bot powered by IBM Watson, How can I help you?'; 
-    this.messageLog.push(defaultMessage);
+    this.socket = io("localhost:3000"); 
+    this.connection = this.getMessage().subscribe(message => {
+      let newMessage = {} as Message;
+      newMessage.sender = 'bot';
+      newMessage.content = String(message);
+      this.messageLog.push(newMessage);
+    })
   }
 
   ngAfterViewChecked() {
@@ -29,8 +37,22 @@ export class ChatpageComponent implements OnInit, AfterViewChecked {
       newMessage.sender = 'user';
       newMessage.content = userMessage;
       this.messageLog.push(newMessage);
+      this.socket.emit('message', newMessage.content);
     }
   }
+
+  getMessage() {
+  let observable = new Observable(observer =>{
+      this.socket.on('message', (data) => {
+        observer.next(data);  
+      });
+      return () => {
+        this.socket.disconnect();
+      };
+    })
+    return observable;
+  }
+  
 }
 
 export interface Message{
