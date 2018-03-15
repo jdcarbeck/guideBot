@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
     HomepageComponent,
     ChatpageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

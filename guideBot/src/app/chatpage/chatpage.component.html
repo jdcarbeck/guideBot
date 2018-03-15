@@ -3,10 +3,10 @@
     <div class="col px-0"><app-navbar></app-navbar></div>
   </div>
   <div class="row" id="chatlogContainer">
-    <div class="col-lg-8 mx-auto" id="chatlog">
-       <div *ngFor="let message of messageLog" class="my-2" [ngClass]="message.sender">
-          {{message.content}}
-        </div>
+    <div class="col-lg-8 mx-auto pre-scrollable" id="chatlog"> 
+     <div *ngFor="let message of messageLog" class="my-2" [ngClass]="message.sender">
+        {{message.content}}
+    </div>
    </div>
   </div>
   <div class="row fixed-bottom" id="messageContainer">
