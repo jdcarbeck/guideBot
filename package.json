@@ -15,7 +15,8 @@
     "express": "^4.16.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "watson-developer-cloud": "^3.2.1"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3"
