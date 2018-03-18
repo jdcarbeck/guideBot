@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 const app = express();
 
 const server = http.Server(app);
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 
 const io = socketIO(server);
 
