@@ -10,6 +10,7 @@ server.listen(3000);
 const io = socketIO(server);
 
 const watsonAssistantV1 = require('watson-developer-cloud/assistant/v1');
+const prompt = require('prompt-sync')();
 
 //parameters to connect to watson
 //current parameters are for a sample workspace
@@ -18,33 +19,57 @@ var watsonAssistant = new watsonAssistantV1({
   password: 'CCjTyX2rJjZL',
   version: '2018-02-16'
 });
-var workspaceId = '80a2a593-31bc-4d6b-8ab0-45e1bb99929b';
+var workspaceId = '2b705ee6-5db1-4a8e-bda4-edf1978cb523';
 
-watsonAssistant.message({
-  workspace_id: workspaceId,
-}, processResponce);
+//empty message sent to recieve start node for the conversation
 
+//function used unpon resoponce from watsonAssistant
 function processResponce(err, responce) {
   if(err) {
     console.error(err);
     return;
   }
+  
+  if(responce.intents.length > 0) {
+  }
+
   if(responce.output.text.length != 0) {
     console.log(responce.output.text[0]);
   }
+
+  //recieve new information from user
+  var newUserMessage = prompt('>>');
+ 
 }
 
-//io.on('connection', (socket) => {
-//  console.log('A user connected');
-//  socket.emit('message', 'Hello, I am guideBot! Ask me anything.');
-  
- // socket.on('disconnect', function() {
-  //  console.log('A user disconnected');
- // });
-//
- // socket.on('message', function(data) {
-  //  console.log(data);
-   // socket.emit('message', data);
-  //});
+io.on('connection', (socket) => {
+  watsonAssistant.message({
+    workspace_id: workspaceId,
+  }, processResponce);
 
-//});
+  var userContext;
+
+  function processResponce(err, responce) {
+    if(err) {
+      console.error(err);
+      socket.emit('message', 'Sorry an error has a occured, try reconnecting');
+    }
+    
+    if(responce.intents.length > 0) {
+      console.log('Detected intent #' + responce.intents[0].intent);
+    }
+
+    if(responce.output.length != 0) {
+      socket.emit('message', responce.output.text[0]);
+    }
+    userContext = responce.context;
+  }
+  
+  socket.on('message', function(message) {
+    watsonAssistant.message({
+      workspace_id: workspaceId,
+      input: { text: message },
+      context: userContext,
+    }, processResponce);
+  });
+});
