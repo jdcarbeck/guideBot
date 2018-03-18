@@ -7,6 +7,7 @@ import * as io from 'socket.io-client';
   templateUrl: './chatpage.component.html',
   styleUrls: ['./chatpage.component.css']
 })
+ 
 export class ChatpageComponent implements OnInit, AfterViewChecked {
 
   messageLog = [];
@@ -17,7 +18,7 @@ export class ChatpageComponent implements OnInit, AfterViewChecked {
   constructor() { }
 
   ngOnInit() {
-    this.socket = io("localhost:3000"); 
+    this.socket = io(); 
     this.connection = this.getMessage().subscribe(message => {
       let newMessage = {} as Message;
       newMessage.sender = 'bot';

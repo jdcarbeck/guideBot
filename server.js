@@ -12,6 +12,10 @@ const io = socketIO(server);
 const watsonAssistantV1 = require('watson-developer-cloud/assistant/v1');
 const prompt = require('prompt-sync')();
 
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/dist/index.html');
+});
+
 //parameters to connect to watson
 //current parameters are for a sample workspace
 var watsonAssistant = new watsonAssistantV1({
