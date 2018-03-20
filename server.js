@@ -20,7 +20,7 @@ var watsonAssistant = new watsonAssistantV1({
   password: 'CCjTyX2rJjZL',
   version: '2018-02-16'
 });
-var workspaceId = '2b705ee6-5db1-4a8e-bda4-edf1978cb523';
+var workspaceId = '63709a59-2db4-44da-8b04-99d7b1cbd994';
 
 //empty message sent to recieve start node for the conversation
 
