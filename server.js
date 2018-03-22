@@ -16,11 +16,11 @@ app.use(express.static('dist'));
 //parameters to connect to watson
 //current parameters are for a sample workspace
 var watsonAssistant = new watsonAssistantV1({
-  username: '9fd296ae-e080-4a66-b28c-4ed84f2b9deb',
-  password: 'CCjTyX2rJjZL',
+  username: cred.username, 
+  password: cred.password,
   version: '2018-02-16'
 });
-var workspaceId = '63709a59-2db4-44da-8b04-99d7b1cbd994';
+var workspaceId = cred.workspace;
 
 //empty message sent to recieve start node for the conversation
 
