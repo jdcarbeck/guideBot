@@ -36,7 +36,7 @@ function processResponce(err, responce) {
 
   if(responce.output.text.length != 0) {
     console.log(responce.output.text[0]);
-  }
+ }
 
   //recieve new information from user
   var newUserMessage = prompt('>>');
