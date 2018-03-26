@@ -13,3 +13,5 @@ The application can then be accessed by navigating to the following address in b
 
 
 note project only works with the creation of a creds.js file containing the username, password, and workspace to connect to watson
+
+A demo is working at: http://sweng6-guidebot.herokuapp.com
