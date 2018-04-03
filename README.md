@@ -12,4 +12,5 @@ The application can then be accessed by navigating to the following address in b
     http://localhost:3000
 
 
-note project only works with the creation of a creds.js file containing the username, password, and workspace to connect to watson
+*note project only works with the creation of a creds.js file containing the username, password, and workspace to connect to watson*
+
