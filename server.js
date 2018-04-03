@@ -2,24 +2,25 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 const app = express();
-const Cred = require('./cred.js');
 const server = http.Server(app);
+const cred = require('./cred.json');
+
 server.listen(process.env.PORT || 3000);
 
 const io = socketIO(server);
 
 const watsonAssistantV1 = require('watson-developer-cloud/assistant/v1');
 const prompt = require('prompt-sync')();
-  
-let cred = new Cred;
+
 app.use(express.static('dist'));
 //parameters to connect to watson
 //current parameters are for a sample workspace
 var watsonAssistant = new watsonAssistantV1({
-  username: cred.username, 
+  username: cred.username,
   password: cred.password,
   version: '2018-02-16'
 });
+
 var workspaceId = cred.workspace;
 
 //empty message sent to recieve start node for the conversation
