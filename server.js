@@ -31,7 +31,7 @@ function processResponce(err, responce) {
     console.error(err);
     return;
   }
-  
+
   if(responce.intents.length > 0) {
   }
 
@@ -41,7 +41,7 @@ function processResponce(err, responce) {
 
   //recieve new information from user
   var newUserMessage = prompt('>>');
- 
+
 }
 
 io.on('connection', (socket) => {
@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
       console.error(err);
       socket.emit('message', 'Sorry an error has a occured, try reconnecting');
     }
-    
+
     if(responce.intents.length > 0) {
       console.log('Detected intent #' + responce.intents[0].intent);
     }
@@ -66,7 +66,7 @@ io.on('connection', (socket) => {
     }
     userContext = responce.context;
   }
-  
+
   socket.on('message', function(message) {
     watsonAssistant.message({
       workspace_id: workspaceId,
