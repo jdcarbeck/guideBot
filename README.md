@@ -12,7 +12,5 @@ The application can then be accessed by navigating to the following address in b
     http://localhost:3000
 
 
-A hosted version of the project can be found at:
-
-    https://guidebot.eu-gb.mybluemix.net
+A hosted version of the project can be found at: https://guidebot.eu-gb.mybluemix.net
 
