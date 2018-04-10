@@ -14,5 +14,5 @@ The application can then be accessed by navigating to the following address in b
 
 A hosted version of the project can be found at:
 
-    https://sweng6-guidebot.herokuapp.com
+    https://guidebot.eu-gb.mybluemix.net
 
