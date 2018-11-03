@@ -1,4 +1,4 @@
-# guideBot
+# guideBot  
 
 **guideBot** helps sixth year secondary students find the right course and third level institution. Powered by IBM's Watson, this chat bot was developed for the software engineering project for Trinity College Dublin.
 
